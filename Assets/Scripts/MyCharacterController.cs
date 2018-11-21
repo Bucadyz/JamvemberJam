@@ -52,7 +52,7 @@ public class MyCharacterController : MonoBehaviour {
         countText.text = "Objects Remaining: " + count.ToString();
         if (count == 0)
         {
-            winText.text = "You win!";
+            winText.text = "Great! Find the Exit!";
         }
     }
 }

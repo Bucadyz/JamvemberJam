@@ -6,16 +6,7 @@ using UnityEngine.UI;
 public class Button : MonoBehaviour {
 
 
-    float ElapsedTime;
-    float FinishTime;
-    Vector3 StartPosition;
-    Vector3 Target;
-
-    private Vector3 startPos;
-    private Vector3 endPos;
-    private float distance = 50f;
-
-
+    public Animation myAnim;
 
     public Text activateText;
     bool insideColliderButton1 = false;
@@ -46,10 +37,11 @@ public class Button : MonoBehaviour {
     public GameObject cube7;
     public GameObject wallToMove;
 
+
     void Start()
     {
-      
 
+        
         activateText.text = "";
 
         cube = GameObject.Find("Cube");
@@ -86,10 +78,6 @@ public class Button : MonoBehaviour {
         wallToMove = GameObject.Find("InsidePiece (10)");
         mainWallPos = wallToMove.transform.localPosition;
 
-        Vector3 StartPosition = Vector3.zero;
-        Target = Vector3.one * 50;
-        ElapsedTime = 0;
-        FinishTime = 60f;
     }
 
 
@@ -98,9 +86,6 @@ public class Button : MonoBehaviour {
 
     void Update()
     {
-
-        ElapsedTime += Time.deltaTime;
-
 
         if (insideColliderButton1 == true)
         {
@@ -154,8 +139,8 @@ public class Button : MonoBehaviour {
         {
             if (Input.GetButtonDown("Interact"))
             {
-                wallToMove.transform.position = Vector3.Lerp(StartPosition, Target, ElapsedTime / FinishTime);
-               // wallToMove.transform.localPosition = new Vector3(9.18f, -10f, 6.09f);
+                myAnim.Play();
+                //wallToMove.transform.localPosition = new Vector3(9.18f, -12f, 6.09f);
             }
                 
             
