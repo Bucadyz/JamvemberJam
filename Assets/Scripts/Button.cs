@@ -7,6 +7,8 @@ public class Button : MonoBehaviour {
 
 
     public Animation myAnim;
+    public AudioSource hedge;
+    public AudioSource button;
 
     public Text activateText;
     bool insideColliderButton1 = false;
@@ -91,6 +93,7 @@ public class Button : MonoBehaviour {
         {
             if (Input.GetButtonDown("Interact"))
             {
+                button.Play();
                 CubeMoving();             
                 Cube3Moving();
                 Cube4Moving();
@@ -102,6 +105,7 @@ public class Button : MonoBehaviour {
         {
             if (Input.GetButtonDown("Interact"))
             {
+                button.Play();
                 Cube1Moving();
                 Cube2Moving();
                 Cube3Moving();
@@ -113,6 +117,7 @@ public class Button : MonoBehaviour {
         {
             if (Input.GetButtonDown("Interact"))
             {
+                button.Play();
                 CubeMoving();
                 Cube5Moving();
                 Cube6Moving();
@@ -124,6 +129,7 @@ public class Button : MonoBehaviour {
         {
             if (Input.GetButtonDown("Interact"))
             {
+                button.Play();
                 cube.transform.localPosition = mainCubePos;
                 cube1.transform.localPosition = mainCube1Pos;
                 cube2.transform.localPosition = mainCube2Pos;
@@ -139,7 +145,9 @@ public class Button : MonoBehaviour {
         {
             if (Input.GetButtonDown("Interact"))
             {
+                button.Play();
                 myAnim.Play();
+                hedge.Play();
                 //wallToMove.transform.localPosition = new Vector3(9.18f, -12f, 6.09f);
             }
                 
